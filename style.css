@@ -1,154 +1,39 @@
-/* --- Global Styles & Mobile-First (320px+) --- */
-:root {
-    --primary-color: #007bff;
-    --dark-color: #222;
-    --light-color: #f4f4f4;
-    --error-color: #d9534f;
-    --success-color: #5cb85c;
+body, html, #app {
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
-    line-height: 1.6;
-    background-color: #fff;
-    color: var(--dark-color);
+#app {
+  overflow: hidden;
+  touch-action: pan-up;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
 }
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
+#app h1 {
+  --fontSize: 60px;
+  --lineHeight: 80px;
+  width: auto;
+  height: calc(2 * var(--lineHeight));
+  line-height: var(--lineHeight);
+  margin: calc(50vh - var(--lineHeight)) auto 0;
+  font-size: var(--fontSize);
+  text-transform: uppercase;
 }
 
-/* --- Header & Footer --- */
-.site-header, .site-footer {
-    background-color: var(--dark-color);
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
+#app p {
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
 }
 
-.site-header .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.site-header nav a {
-    color: white;
-    margin: 0 0.5rem;
-    text-decoration: none;
-}
-
-/* --- Sections --- */
-section {
-    padding: 3rem 0;
-}
-
-.hero {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    min-height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.contact-section {
-    background-color: var(--light-color);
-}
-
-/* --- Accessible Form Styling --- */
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Important! */
-}
-
-/* Accessible Focus Outline */
-input:focus-visible, textarea:focus-visible {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 2px;
-}
-
-button {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* --- Validation & Status States --- */
-.error-message {
-    color: var(--error-color);
-    font-size: 0.9rem;
-    margin-top: 0.25rem;
-    min-height: 1em; /* Prevents layout shift */
-}
-
-input.error, textarea.error {
-    border-color: var(--error-color);
-}
-
-.form-status {
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 4px;
-    text-align: center;
-    display: none; /* Hidden by default */
-}
-
-.form-status.success {
-    background-color: var(--success-color);
-    color: white;
-    display: block;
-}
-
-.form-status.error {
-    background-color: var(--error-color);
-    color: white;
-    display: block;
-}
-
-
-/* --- Tablet Breakpoint (768px+) --- */
-@media (min-width: 768px) {
-    .site-header .container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    h1 {
-        font-size: 3rem;
-    }
-
-    button {
-        width: auto;
-    }
+#app canvas {
+  display: block;
+  position: fixed;
+  z-index: -1;
+  top: 0;
 }
